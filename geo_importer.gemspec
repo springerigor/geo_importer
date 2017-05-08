@@ -38,6 +38,6 @@ Gem::Specification.new do |spec|
   # Validate country name vs country code
   spec.add_runtime_dependency "countries"
 
-  # Keep configuration variable outside the gem
-  spec.add_development_dependency "dotenv"
+  # Keep configuration variable outside the gem code
+  spec.add_runtime_dependency "dotenv"
 end
