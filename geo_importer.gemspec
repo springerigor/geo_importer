@@ -26,8 +26,17 @@ Gem::Specification.new do |spec|
   # RSpec for testing purpose
   spec.add_development_dependency "rspec"
 
+  # Postgres
+  spec.add_runtime_dependency "pg"
+
   # Sequel for data layer (an alternative for ActiveRecord, it's always nice to try sth new).
   spec.add_runtime_dependency "sequel"
+
+  # Validate IP addresses
+  spec.add_runtime_dependency "ipaddress"
+
+  # Validate country name vs country code
+  spec.add_runtime_dependency "countries"
 
   # Keep configuration variable outside the gem
   spec.add_development_dependency "dotenv"
