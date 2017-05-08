@@ -9,7 +9,7 @@ module GeoImporter
       end
 
       def valid?
-        @country_name.is_a?(String) && Country[country_code].name == @country_name
+        @country_name.is_a?(String) && ISO3166::Country[@country_code].name == @country_name
       end
     end
   end
