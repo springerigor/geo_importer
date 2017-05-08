@@ -1,9 +1,4 @@
-Sequel::Model.db = Sequel.postgres(ENV["DATABASE_NAME"],
-  host: ENV["DATABASE_HOST"],
-  password: ENV["DATABASE_PASSWORD"],
-  port: ENV["DATABASE_PORT"],
-  user: ENV["DATABASE_USER"]
-)
+Sequel::Model.db = Sequel.connect(ENV["DATABASE_URL"])
 
 module GeoImporter
   module Models
