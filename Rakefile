@@ -8,10 +8,10 @@ namespace :geo_importer_db do
     db = Sequel.connect(ENV.fetch("DATABASE_URL"))
     if args[:version]
       puts "Migrating to version #{args[:version]}"
-      Sequel::Migrator.run(db, "lib/geo_importer/db/migrations", target: args[:version].to_i)
+      Sequel::Migrator.run(db, "#{File.dirname(__FILE__)}/lib/geo_importer/db/migrations", target: args[:version].to_i)
     else
       puts "Migrating to latest"
-      Sequel::Migrator.run(db, "lib/geo_importer/db/migrations")
+      Sequel::Migrator.run(db, "#{File.dirname(__FILE__)}/lib/geo_importer/db/migrations")
     end
   end
 end
