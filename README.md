@@ -25,7 +25,7 @@ Or install it yourself as:
 1. Run migration to create required table in DB.
 
 ```shell
-rake db:migrate
+rake geo_importer_db:migrate
 ```
 
 ## Development

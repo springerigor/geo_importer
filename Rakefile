@@ -2,7 +2,7 @@ require "bundler/gem_tasks"
 require 'dotenv/load'
 require 'sequel'
 
-namespace :db do
+namespace :geo_importer_db do
   desc "Run migrations"
   task :migrate, [:version] do |t, args|
     Sequel.extension :migration
