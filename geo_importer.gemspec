@@ -35,9 +35,6 @@ Gem::Specification.new do |spec|
   # Validate IP addresses
   spec.add_runtime_dependency "ipaddress"
 
-  # Validate country name vs country code
-  spec.add_runtime_dependency "countries"
-
   # Keep configuration variable outside the gem code
   spec.add_runtime_dependency "dotenv"
 end

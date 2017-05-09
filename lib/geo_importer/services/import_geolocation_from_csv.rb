@@ -23,19 +23,19 @@ module GeoImporter
       end
 
       def new_geolocation?
-        GeoImporter::Models::Geolocation.find(ip_address: @gelocation_csv_row['ip_address'])
+        GeoImporter::Models::Geolocation.find(ip_address: @gelocation_csv_row['ip_address']).nil?
       end
 
       def initialized_geolocation_record
         @initialized_geolocation_record ||= GeoImporter::Models::Geolocation.new(
           country_code: @gelocation_csv_row['country_code'],
-          country_name: @gelocation_csv_row['country'],
           city: @gelocation_csv_row['city'],
           ip_address: @gelocation_csv_row['ip_address'],
           longitude: @gelocation_csv_row['longitude'],
           latitude: @gelocation_csv_row['latitude'],
           mystery_value: @gelocation_csv_row['mystery_value'],
         )
+        p @initialized_geolocation_record
       end
 
       def geolocation_valid?

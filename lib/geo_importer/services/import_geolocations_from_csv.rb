@@ -20,6 +20,7 @@ module GeoImporter
 
         import_valid_records
 
+        # TODO: Consider keeping import history in database for audit purpose
         puts "Import finished at #{Time.now.utc}"
         puts "No. of valid records imported: #{@number_of_valid_records}"
         puts "No. of invalid records: #{@number_of_invalid_records}"
@@ -38,6 +39,8 @@ module GeoImporter
             gelocation_csv_row: csv_row,
             database_connection: @database_connection
           ).call
+
+          p imported_record
 
           if imported_record[:status] == :ok
             @number_of_valid_records += 1
