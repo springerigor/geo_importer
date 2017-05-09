@@ -22,7 +22,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Run migration to create required table in DB.
+
+```shell
+rake db:migrate
+```
 
 ## Development
 
@@ -33,4 +37,3 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/geo_importer.
-
